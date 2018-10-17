@@ -1,0 +1,24 @@
+{
+  "name": "repo-template",
+  "version": "0.0.1",
+  "description": "\"PSP 2.0 project / repo template and common files\"",
+  "main": "index.js",
+  "repository": "git@github.com:pspusa/repo-template.git",
+  "author": "daniel.bodnar@perspectives.org",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^0.14.4",
+    "bulma": "^0.7.1",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-deflist": "^2.0.3",
+    "markdown-it-footnote": "^3.0.1",
+    "markdown-it-ins": "^2.0.0",
+    "markdown-it-mark": "^2.0.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0"
+  }
+}
