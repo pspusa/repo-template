@@ -1,30 +1,27 @@
 # Development Setup
 
-
-
 There are two fundamental components of the Pull Request process: one concrete
 and technical, and one more process oriented. The concrete and technical
 component involves the specific details of setting up your local environment
 so that you can make the actual changes. This is where we will start.
 
-* [Prerequisites](#prerequisites)
-  * [Global Dependencies](#global-dependencies)
-  * [Project-specific dependencies](#project-specific-dependencies)
-* [Setting up your local environment](#setting-up-your-local-environment)
-  * [Step 1: Fork](#step-1-fork)
-  * [Step 2: Branch](#step-2-branch)
-* [The Process of Making Changes](#the-process-of-making-changes)
-  * [Step 3: Code](#step-3-code)
-  * [Step 4: Commit](#step-4-commit)
-    * [Commit message guidelines](#commit-message-guidelines)
-  * [Step 5: Rebase](#step-5-rebase)
-  * [Step 6: Test](#step-6-test)
-    * [Test Coverage](#test-coverage)
-  * [Step 7: Push](#step-7-push)
-  * [Step 8: Opening the Pull Request](#step-8-opening-the-pull-request)
-* [Additional Notes](#additional-notes)
-  * [Commit Squashing](#commit-squashing)
-
+- [Prerequisites](#prerequisites)
+  - [Global Dependencies](#global-dependencies)
+  - [Project-specific dependencies](#project-specific-dependencies)
+- [Setting up your local environment](#setting-up-your-local-environment)
+  - [Step 1: Fork](#step-1-fork)
+  - [Step 2: Branch](#step-2-branch)
+- [The Process of Making Changes](#the-process-of-making-changes)
+  - [Step 3: Code](#step-3-code)
+  - [Step 4: Commit](#step-4-commit)
+    - [Commit message guidelines](#commit-message-guidelines)
+  - [Step 5: Rebase](#step-5-rebase)
+  - [Step 6: Test](#step-6-test)
+    - [Test Coverage](#test-coverage)
+  - [Step 7: Push](#step-7-push)
+  - [Step 8: Opening the Pull Request](#step-8-opening-the-pull-request)
+- [Additional Notes](#additional-notes)
+  - [Commit Squashing](#commit-squashing)
 
 ## Prerequisites <a class="toc" id="dependencies" href="#prerequisites"></a>
 
@@ -32,34 +29,34 @@ so that you can make the actual changes. This is where we will start.
 
 The following is a list of required dependencies required for all [PSP 2.0 Projects](https://github.com/pspusa):
 
-* Git:
-  * [Install git](https://www.atlassian.com/git/tutorials/install-git)
-  * [Git Cheatsheat](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
-* Node.js 8+ and npm 6+ (we recommend [nvm](https://github.com/creationix/nvm) for Mac/Linux, and [nvm-windows](https://github.com/coreybutler/nvm-windows) for windows)
-* Global npm modules:
-  * [Yarn](https://yarnpkg.com/en/docs/install): `npm i -g yarn`
-  * [vue-cli](https://cli.vuejs.org/guide/installation.html): `yarn global add @vue/cli`
-  * [VuePress](https://v0.vuepress.vuejs.org/): `npm i -g vuepress`
-
+- Git:
+  - [Install git](https://www.atlassian.com/git/tutorials/install-git)
+  - [Git Cheatsheat](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
+- Node.js 8+ and npm 6+ (we recommend [nvm](https://github.com/creationix/nvm) for Mac/Linux, and [nvm-windows](https://github.com/coreybutler/nvm-windows) for windows)
+- Global npm modules:
+  - [Yarn](https://yarnpkg.com/en/docs/install): `npm i -g yarn`
+  - [vue-cli](https://cli.vuejs.org/guide/installation.html): `yarn global add @vue/cli`
+  - [VuePress](https://v0.vuepress.vuejs.org/): `npm i -g vuepress`
 
 ### Project-specific Dependencies
 
 The following additional dependencies are required to work on this specific project:
 
-*
-
+\*
 
 ## Setting up your local environment
 
 To get started, make sure you've installed all required [prerequisites](#prerequisites). Depending on
 your operating system, there are also a number of other dependencies required:
 
+1.  All [prerequisite dependencies](#prerequisites)
+2.  Additional dependencies...
 
+### Step 1: Create an issue
 
-1. All [prerequisite dependencies](#prerequisites)
-2. Additional dependencies...
+All pull requests must reference an issue before being accepted / merged. Please start by [creating an issue](/issues/new) if one does not exist.
 
-### Step 1: Fork
+### Step 2: Fork
 
 Fork the project [on GitHub](https://github.com/pspusa/repo-template) and clone your fork
 locally.
@@ -87,7 +84,7 @@ and award you the `Contributor` label after the changes have been merged,
 make sure this local email is also added to your
 [GitHub email list](https://github.com/settings/emails).
 
-### Step 2: Branch
+### Step 3: Branch
 
 As a best practice to keep your development environment as organized as
 possible, create local branches to work within. These should also be created
@@ -99,11 +96,11 @@ $ git checkout -b my-branch -t upstream/master
 
 ## The Process of Making Changes
 
-### Step 3: Code
+### Step 4: Code
 
 Do yo' thing.
 
-### Step 4: Commit
+### Step 5: Commit
 
 It is a recommended best practice to keep your changes as logically grouped
 as possible within individual commits. There is no limit to the number of
@@ -122,35 +119,37 @@ notes about [commit squashing](#commit-squashing)).
 
 A good commit message should describe what changed and why.
 
-1. The first line should:
-   - contain a short description of the change (preferably 50 characters or
-     less, and no more than 72 characters)
-   - be entirely in lowercase with the exception of proper nouns, acronyms, and
-   the words that refer to code, like function/variable names
-   - be prefixed with the name of the changed subsystem and start with an
-   imperative verb. Check the output of `git log --oneline files/you/changed` to
-   find out what subsystems your changes touch.
+1.  The first line should:
 
-   Examples:
-   - `net: add localAddress and localPort to Socket`
-   - `src: fix typos in async_wrap.h`
+    - contain a short description of the change (preferably 50 characters or
+      less, and no more than 72 characters)
+    - be entirely in lowercase with the exception of proper nouns, acronyms, and
+      the words that refer to code, like function/variable names
+    - be prefixed with the name of the changed subsystem and start with an
+      imperative verb. Check the output of `git log --oneline files/you/changed` to
+      find out what subsystems your changes touch.
 
+    Examples:
 
-2. Keep the second line blank.
-3. Wrap all other lines at 72 columns (except for long URLs).
+    - `net: add localAddress and localPort to Socket`
+    - `src: fix typos in async_wrap.h`
 
-4. If your patch fixes an open issue, you can add a reference to it at the end
-of the log. Use the `Fixes:` prefix and the full issue URL. For other references
-use `Refs:`.
+2)  Keep the second line blank.
+3)  Wrap all other lines at 72 columns (except for long URLs).
 
-   Examples:
-   - `Fixes: https://github.com/pspusa/repo-template/issues/1337`
-   - `Refs: http://eslint.org/docs/rules/space-in-parens.html`
-   - `Refs: https://github.com/pspusa/repo-template/pull/3615`
+4)  If your patch fixes an open issue, you can add a reference to it at the end
+    of the log. Use the `Fixes:` prefix and the full issue URL. For other references
+    use `Refs:`.
 
-5. If your commit introduces a breaking change (`semver-major`), it should
-contain an explanation about the reason of the breaking change, which
-situation would trigger the breaking change and what is the exact change.
+    Examples:
+
+    - `Fixes: https://github.com/pspusa/repo-template/issues/1337`
+    - `Refs: http://eslint.org/docs/rules/space-in-parens.html`
+    - `Refs: https://github.com/pspusa/repo-template/pull/3615`
+
+5)  If your commit introduces a breaking change (`semver-major`), it should
+    contain an explanation about the reason of the breaking change, which
+    situation would trigger the breaking change and what is the exact change.
 
 Sample complete commit message:
 
@@ -179,7 +178,7 @@ the project guidelines.
 See [core-validate-commit](https://github.com/evanlucas/core-validate-commit) -
 A utility that ensures commits follow the commit formatting guidelines.
 
-### Step 5: Rebase
+### Step 6: Rebase
 
 As a best practice, once you have committed your changes, it is a good idea
 to use `git rebase` (not `git merge`) to synchronize your work with the main
@@ -193,11 +192,11 @@ $ git rebase upstream/master
 This ensures that your working branch has the latest changes from `pspusa/repo-template`
 master.
 
-### Step 6: Test
+### Step 7: Test
 
 Additional documentation for running tests will be added later. For now, if a project contains tests you should be able to run `npm test`. To write tests, please use [TestCafe](https://github.com/DevExpress/testcafe) to write tests. This may be replaced at somepoint in the future, as additional research / experimentation is required.
 
-### Step 7: Push
+### Step 8: Push
 
 Once you are sure your commits are ready to go, with passing tests and linting,
 begin the process of opening a Pull Request by pushing your working branch to
@@ -207,7 +206,7 @@ your fork on GitHub.
 $ git push origin my-branch
 ```
 
-### Step 8: Opening the Pull Request
+### Step 9: Opening the Pull Request
 
 From within GitHub, opening a new Pull Request will present you with a template
 that should be filled out:

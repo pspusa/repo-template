@@ -1,5 +1,5 @@
 module.exports = {
-  title: "PSP 2.0 repository template (change me)",
+  title: "PSP 2.0 repository template",
   description: "A PSP 2.0 documentation demo using VuePress",
   head: [
     [
@@ -13,7 +13,7 @@ module.exports = {
       }
     ]
   ],
-
+  base: "/repo-template/",
   serviceWorker: true,
   markdown: {
     lineNumbers: true,
@@ -52,6 +52,28 @@ module.exports = {
         buttonText: "Refresh"
       }
     },
+    nav: [
+      {
+        text: "Home",
+        link: "/"
+      },
+      {
+        text: "Guide",
+        link: "/guide/"
+      },
+      // {
+      //   text: "Languages",
+      //   items: [
+      //     { text: "English", link: "/" },
+      //     { text: "Spanish", link: "/es" }
+      //   ]
+      // },
+      {
+        text: "PSPUSA Github",
+        link: "https://github.com/pspusa"
+      }
+    ],
+    sidebar: ["/", "/guide/"],
     locales: {
       "/": {
         // text for the language dropdown
@@ -59,31 +81,8 @@ module.exports = {
         // label for this locale in the language dropdown
         label: "English",
         // text for the edit-on-github link
-        editLinkText: "Edit this page on GitHub",
+        editLinkText: "Edit this page on GitHub"
         // algolia docsearch options for current locale
-        algolia: {},
-        nav: [
-          {
-            text: "Home",
-            link: "/"
-          },
-          {
-            text: "Guide",
-            link: "/guide/"
-          },
-          // {
-          //   text: "Languages",
-          //   items: [
-          //     { text: "English", link: "/" },
-          //     { text: "Spanish", link: "/es" }
-          //   ]
-          // },
-          {
-            text: "PSPUSA Github",
-            link: "https://github.com/pspusa"
-          }
-        ],
-        sidebar: ["/", "/guide/"]
       }
     }
   },
@@ -92,12 +91,12 @@ module.exports = {
     // As a special case, the default locale can use '/' as its path.
     "/": {
       lang: "en-US", // this will be set as the lang attribute on <html>
-      title: "PSP 2.0 repository template (change me)",
+      title: "PSP 2.0 repository template",
       description: "A PSP 2.0 documentation demo using VuePress"
     },
     "/es/": {
       lang: "es-US",
-      title: "Plantilla de repositorio de PSP 2.0 (cambiarme)",
+      title: "Plantilla de repositorio de PSP 2.0",
       description:
         "Una demostración de documentación de PSP 2.0 usando VuePress"
     },
